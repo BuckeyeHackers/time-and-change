@@ -1,0 +1,53 @@
+.hoverbox {
+	background-color: #FFFFFF;
+	border: 1px solid #9FA6AD;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #888888;
+	color: #888888;
+	display: inline-block;
+	font-size: .6em;
+	padding: 10px;
+	position: absolute;
+	visibility: hidden;
+	text-align: center;
+	width: 200px;
+	z-index: 1;
+}
+
+.linkWrapper:hover > .hoverbox { visibility: visible; }
+
+.button {
+	border: none;
+	border-radius: 4px;
+	color: white;
+	display: inline-block;
+	font-size: .9em;
+	margin: 5px;
+	padding: 8px;
+	text-align: center;
+	text-decoration: none;
+	transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	width: 36px;
+}
+
+.button:hover {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+.green {
+	background-color: #06C73A;
+}
+
+.green:hover {
+	border: 1px solid #06C73A;
+}
+
+.red {
+	background-color: #CD0100;
+}
+
+.red:hover {
+	border: 1px solid #CD0100;
+}
