@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Time and Change",
+  "description": "This extension will help users visualize their spending in work hours.",
+  "version": "1.0",
+  "content_scripts": [ {"matches": ["https://*/*"], "css": ["main.css"], "js": ["main.js"], "run_at": "document_end", "all_frames": true} ],
+  "permissions": [
+  "https://*/",
+  "activeTab",
+  "tabs"
+   ]
+}
+
