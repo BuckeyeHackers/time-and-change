@@ -1,5 +1,4 @@
 #time-and-change-body {
-    width: 250px;
     display: flex;
     justify-content: center;
     font-size: 10pt;
@@ -72,6 +71,7 @@
     cursor:pointer;
     border: 1px solid black;
     background-color:#eee;
+    display:inline-block;
 }
 
 .button:hover{
@@ -110,7 +110,11 @@
     text-align:center;
 }
 
-td:nth-of-type(even) input{
+#time-and-change-table> tbody > tr > td+td > input{
     margin-left:1em;
     width:50px;
+}
+
+#sum-line{
+	border-bottom:2px solid black;
 }
