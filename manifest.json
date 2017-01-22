@@ -4,10 +4,13 @@
   "description": "This extension will help users visualize their spending in work hours.",
   "version": "1.0",
   "content_scripts": [ {"matches": ["https://*/*"], "css": ["main.css"], "js": ["main.js"], "run_at": "document_end", "all_frames": true} ],
+  "browser_action": {
+   "default_popup": "popup.html"
+  },
   "permissions": [
-  "https://*/",
-  "activeTab",
-  "tabs"
-   ]
+   "https://*/",
+   "activeTab",
+   "tabs"
+  ]
 }
 
