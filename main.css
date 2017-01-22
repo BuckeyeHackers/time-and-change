@@ -45,7 +45,7 @@
 
 .red:hover {
 	background-color: #AF1400;
-
+}
 body{
     width:250px;
     display:flex;
@@ -61,7 +61,7 @@ body{
 #wage {
     width:50px;
 }
-.button{
+.button2{
     padding: 5px;
     box-sizing: border-box;
     border-radius:10px;
