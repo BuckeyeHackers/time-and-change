@@ -72,6 +72,7 @@
     cursor:pointer;
     border: 1px solid black;
     background-color:#eee;
+    display:inline-block;
 }
 
 .button:hover{
@@ -113,4 +114,8 @@
 td:nth-of-type(even) input{
     margin-left:1em;
     width:50px;
+}
+
+#sum-line{
+	border-bottom:2px solid black;
 }
