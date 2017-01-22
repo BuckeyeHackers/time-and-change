@@ -45,13 +45,9 @@ var replaceTextInNode = function(parentNode) {
 					    chrome.storage.sync.get('tac-list', function(data) {
 							l = data['tac-list']
 
-							//var args = document.getElementById("hiddenscrape").innerHTML
-							//var arglist = args.split(',')
-							//vendor = arglist[0]
-							//price = Number(arglist[1])
 
 							var timestamp = new Date().valueOf();
-							l.push([timestamp, [domain, price]]);
+							l.push([timestamp, [domain, floatprice]]);
 							var obj = {};
 							obj['tac-list'] = l;
 							console.log("logging new vendor data")

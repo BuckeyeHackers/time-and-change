@@ -39,7 +39,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		console.log(data)
 		if (!(Object.keys(data).length === 0 && data.constructor === Object) && data['tac-list'].length > 0){
 			console.log("initializing from list.")
-			initialize_inputs(data['tac-list']);
+			chrome.storage.sync.get('tac-wage', function(data2){
+				var wage = data2['tac-wage']
+				initialize_inputs(data['tac-list'], wage);
+			});
 		}
 		else{
 			console.log("No inputs for tac-list. initializing list.")
@@ -130,8 +133,12 @@ function store_pref(obj){
 }
 
 //[ {timestamp:[vendor,cost]}, {timestamp:[vendor,cost]} {...}, ... ]
-function initialize_inputs(data){
+function initialize_inputs(data, wage){
 	console.log(data)
+	console.log(wage)
+	var totalcost = 0.0
+	var totaltimecost = 0.0
+
 	for (i = 0; i < data.length; i++){
 		item = data[i]
 
@@ -139,14 +146,25 @@ function initialize_inputs(data){
 		v_c = item[1]
 		vendor = v_c[0]
 		cost = v_c[1]
+		timecost = Number(cost) / Number(wage)
+
+		totalcost += Number(cost)
+		totaltimecost +=Number(timecost)
+
 
 		keyi = "i"+String(i+1);
 		keyc = "c"+String(i+1);
+		keyh = "h"+String(i+1);
 		console.log(keyi + " " + keyc + "whats up " + vendor + " " + cost)
 		document.getElementById(keyi).value = vendor
-		document.getElementById(keyc).value = cost
+		document.getElementById(keyc).value = Number(cost).toFixed(2)
+		document.getElementById(keyh).value = Number(timecost).toFixed(2)
+
+
 
 	}
+	document.getElementById('cf').value = Math.round(totalcost * 100) / 100
+	document.getElementById('hf').value = Math.round(totaltimecost * 100) / 100
 }
 
 function initialize_wage(data){
