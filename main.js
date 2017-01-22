@@ -65,5 +65,8 @@ function hideHoverbox() {
 }
 
 function logData(vendor, price) {
-
+	chrome.storage.sync.get('tac-list', function(data) {
+		var timestamp = new Date().valueOf();
+		l.push([timestamp, [vendor, price]]);
+	});
 }
