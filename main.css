@@ -16,7 +16,7 @@
 
 .linkWrapper:hover > .hoverbox { visibility: visible; }
 
-.button {
+.ext-button {
 	border: none;
 	border-radius: 4px;
 	color: white;
