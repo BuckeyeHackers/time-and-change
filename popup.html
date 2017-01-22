@@ -1,47 +1,55 @@
 <html>
 <head>
-
+<link href="main.css" rel="stylesheet">
 <script src="jquery-3.1.1.js"></script>
 <script src="basic.js"></script>
 </head>
 <body id="lbody">
-<table>
 <form>
-<h2>Your Hourly Wage<input id="wage"></input></h2>
+
+<div id="wage-line">
+  I make $<input id="wage"></input> per 
+  <div class="button split-button" id="hr">hour</div> 
+  <div class="button split-button selected" id="mn">month</div>
+</div>
+  <div class="center">Enter Monthly expenses</div>
+<table>
   <tr>
-  	<th>Enter Monthly expenses</tb>
+    <th>Item</th>
+    <th>Cost</th>
   </tr>
   <tr>
-    <th>Item<input id="i1"></input></th>
-    <th>Cost<input id="c1"></input></th>
+    <td><input id="i1"></input></td>
+    <td><input id="c1"></input></td>
   </tr>
   <tr>
-    <th><input id="i2"></input></th>
-    <th><input id="c2"></input></th>
+    <td><input id="i2"></input></td>
+    <td><input id="c2"></input></td>
   </tr>
   <tr>
-    <th><input id="i3"></input></th>
-    <th><input id="c3"></input></th>
+    <td><input id="i3"></input></td>
+    <td><input id="c3"></input></td>
   </tr>
   <tr>
-    <th><input id="i4"></input></th>
-    <th><input id="c4"></input></th>
+    <td><input id="i4"></input></td>
+    <td><input id="c4"></input></td>
   </tr>
   <tr>
-    <th><input id="i5"></input></th>
-    <th><input id="c5"></input></th>
+    <td><input id="i5"></input></td>
+    <td><input id="c5"></input></td>
   </tr>
   <tr>
-    <th><input id="i6"></input></th>
-    <th><input id="c6"></input></th>
+    <td><input id="i6"></input></td>
+    <td><input id="c6"></input></td>
   </tr>
   <tr>
-    <th><input id="i7"></input></th>
-    <th><input id="c7"></input></th>
+    <td><input id="i7"></input></td>
+    <td><input id="c7"></input></td>
   </tr>
 </table>
   <button id="submitall">Submit</button>
   <button id="Check List">Saved Monies</button>
   </form>
+  <script src="popup.js"></script>
 	</body>
 </html> 
