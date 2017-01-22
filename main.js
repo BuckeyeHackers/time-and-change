@@ -30,7 +30,7 @@ var replaceTextInNode = function(parentNode) {
 					// Create a hoverbox:
 					var hoverbox = document.createElement('div');
 					hoverbox.setAttribute('class', 'hoverbox');
-					hoverbox.innerHTML = "At $15/hr, it will take " + calculatedTime + " hours of work to cover the cost of this purchase.<br><br>Did this knowledge influence you to not buy this item?<br><div class=\"ext-button green\" onclick=\"logData(" + domain + ", " + price + ")\">Yes</div><div class=\"ext-button red\">No</div>";
+					hoverbox.innerHTML = "At $15/hr, it will take " + calculatedTime + " hours of work to cover the cost of this purchase.<br><br>Did this knowledge influence you to not buy this item?<br><div class=\"ext-button green\" onclick=\"logData(" + domain + ", " + price + ")\">Yes</div><div class=\"ext-button red\" onclick=\"hideHoverbox()\">No</div>";
 					wrapper.appendChild(hoverbox);
 				}
 			}
@@ -55,6 +55,13 @@ function extractDomain(url) {
 	domain = domain.split(':')[0];
 
 	return domain;
+}
+
+function hideHoverbox() {
+	var hoverboxes = document.getElementsByClassName("hoverbox")
+	for (var i = 0; i < hoverboxes.length; i++) {
+		hoverboxes[i].setAttribute("display", "none");
+	}
 }
 
 function logData(vendor, price) {
