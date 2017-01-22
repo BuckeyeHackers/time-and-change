@@ -31,23 +31,18 @@
 	width: 36px;
 }
 
-.button:hover {
-	background-color: #FFFFFF;
-	color: #000000;
-}
-
 .green {
-	background-color: #06C73A;
+	background-color: #5B9632;
 }
 
 .green:hover {
-	border: 1px solid #06C73A;
+	background-color: #3A7113;
 }
 
 .red {
-	background-color: #CD0100;
+	background-color: #D61900;
 }
 
 .red:hover {
-	border: 1px solid #CD0100;
+	background-color: #AF1400;
 }
