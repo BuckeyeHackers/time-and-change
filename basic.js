@@ -19,6 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
     	}
     })
 
+    chrome.storage.sync.get('tac-wage', function(data){
+   		if (Object.keys(data).length === 0 && data.constructor === Object){
+    		var obj = {}
+    		obj['tac-wage'] = 0.0
+    		store_pref(obj);
+    	}
+    	else{
+    		console.log("tac-wage response")
+    		console.log(data)
+    	}
+    })
+
     //populate our fields
     /*
 	{'tac-list' : [ [timestamp,[vendor,cost]], [timestamp,[vendor,cost]] [...], ... ]}
@@ -33,6 +45,22 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log("No inputs for tac-list. initializing list.")
 			var obj = {} 
 			obj['tac-list'] = []
+			store_pref(obj);
+		}
+		
+
+	});
+
+	chrome.storage.sync.get('tac-wage', function(data){
+		console.log(data)
+		if (!(Object.keys(data).length === 0 && data.constructor === Object)){
+			console.log("initializing from wage.")
+			initialize_wage(data['tac-wage']);
+		}
+		else{
+			console.log("No inputs for tac-wage. initializing.")
+			var obj = {} 
+			obj['tac-wage'] = 0.0
 			store_pref(obj);
 		}
 		
@@ -54,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
   		  	console.log("elements: " + elements)
   		  	console.log(data)
 	    	console.log("Building list of inputs.")
+
 	    	for (j = 1; j <= elements; j++){
 				var keyi = "i"+String(j);
 				var keyc = "c"+String(j);
@@ -69,6 +98,15 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			
 			}
+
+			var wage = document.getElementById('wage').value
+			var objw = {}
+			objw['tac-wage'] = wage
+			console.log("Sending waeg to save: ")
+
+			console.log(objw)
+			store_pref(objw);
+
 			//{'tac-list' : [ [timestamp,[vendor,cost]], [timestamp,[vendor,cost]] [...], ... ]}
 
 			var obj = {}
@@ -109,5 +147,9 @@ function initialize_inputs(data){
 		document.getElementById(keyc).value = cost
 
 	}
+}
+
+function initialize_wage(data){
+	document.getElementById("wage").value = data
 }
 
