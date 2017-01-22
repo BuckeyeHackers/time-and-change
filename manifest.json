@@ -10,7 +10,8 @@
   "permissions": [
    "https://*/",
    "activeTab",
-   "tabs"
+   "tabs",
+   "storage"
   ]
 }
 
