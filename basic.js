@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			var wage = document.getElementById('wage').value
 			var objw = {}
 			objw['tac-wage'] = wage
-			console.log("Sending waeg to save: ")
+			console.log("Sending wage to save: ")
 
 			console.log(objw)
 			store_pref(objw);
