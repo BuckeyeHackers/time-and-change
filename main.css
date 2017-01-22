@@ -1,8 +1,8 @@
-body{
-    width:250px;
-    display:flex;
-    justify-content:center;
-    font-size:10pt;
+#time-and-change-body {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    font-size: 10pt;
 }
 
 .hoverbox {
